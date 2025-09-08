@@ -1,0 +1,9 @@
+<paths xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Internal app dirs -->
+    <cache-path name="cache" path="."/>
+    <files-path name="files" path="."/>
+
+    <!-- External app-specific dirs (optional, if you use them) -->
+    <external-cache-path name="ext_cache" path="."/>
+    <external-files-path name="pictures" path="Pictures/io.sci.citizen/" />
+</paths>

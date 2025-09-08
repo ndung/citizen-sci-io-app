@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/nav_my_records"
+        android:icon="@android:drawable/ic_menu_recent_history"
+        android:title="@string/data_records" />
+    <item
+        android:id="@+id/nav_map"
+        android:icon="@android:drawable/ic_menu_mapmode"
+        android:title="@string/online_map" />
+    <item
+        android:id="@+id/nav_my_account"
+        android:icon="@android:drawable/ic_menu_myplaces"
+        android:title="@string/my_account" />
+</menu>
