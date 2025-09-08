@@ -22,7 +22,7 @@ import io.sci.citizen.util.Memory;
 public class App extends Application implements LocationAssistant.Listener {
 
     private static final String TAG = App.class.getSimpleName();
-    public static final String API_URL = "http://192.168.1.11/api/";
+    public static final String API_URL = "https://citizen-sci-io-c296af702ec9.herokuapp.com/api/";
     public static final String IMAGE_URL = "https://citizen-sci-io-c296af702ec9.herokuapp.com/files/";
     public static final String LATITUDE = "LATITUDE";
     public static final String LONGITUDE = "LONGITUDE";
