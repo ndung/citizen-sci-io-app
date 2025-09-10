@@ -11,6 +11,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
+import android.util.TypedValue;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -24,16 +25,15 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
+import com.bumptech.glide.Glide;
 import com.google.android.material.appbar.MaterialToolbar;
 
 import io.sci.citizen.adapter.RecordAdapter;
-import io.sci.citizen.fragment.RecordFragment;
 import io.sci.citizen.model.Data;
 import io.sci.citizen.model.Section;
 
 public class DataListActivity extends BaseActivity {
 
-    private static final String TAG = RecordFragment.class.toString();
     private SwipeRefreshLayout layout;
     private RecyclerView recyclerView;
     private RecordAdapter recordAdapter;
@@ -93,9 +93,23 @@ public class DataListActivity extends BaseActivity {
                 }
             }
         };
+        int w = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 32, this.getResources().getDisplayMetrics());
+        int h = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 32, this.getResources().getDisplayMetrics());
 
         MaterialToolbar toolbar = findViewById(R.id.toolbar);
         toolbar.setTitle(App.instance().memory().project().getName());
+        Glide.with(this)
+                .asDrawable()
+                .override(w, h)
+                .load(App.instance().memory().project().getIconUrl())
+                .into(new com.bumptech.glide.request.target.CustomTarget<android.graphics.drawable.Drawable>() {
+                    @Override public void onResourceReady(android.graphics.drawable.Drawable resource,
+                                                          com.bumptech.glide.request.transition.Transition<? super android.graphics.drawable.Drawable> transition) {
+                        // got your Drawable here
+                        toolbar.setLogo(resource);
+                    }
+                    @Override public void onLoadCleared(android.graphics.drawable.Drawable placeholder) { }
+                });
         toolbar.setOnMenuItemClickListener(item -> {
             if (item.getItemId() == R.id.action_add) {
                 startRecordActivity();
@@ -110,6 +124,7 @@ public class DataListActivity extends BaseActivity {
             return false;
         });
     }
+
 
     private void showDialog(Data data){
         new AlertDialog.Builder(this)

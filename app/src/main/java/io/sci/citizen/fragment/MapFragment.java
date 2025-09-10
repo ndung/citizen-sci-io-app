@@ -148,7 +148,8 @@ public class MapFragment extends BaseFragment implements OnMapReadyCallback {
         }*/
 
         TextView tvMetadata = dialog.findViewById(R.id.tv_metadata);
-        TextView submitted = dialog.findViewById(R.id.uploaded);
+        TextView tvSubmitted = dialog.findViewById(R.id.tv_uploaded);
+        TextView tvUuid = dialog.findViewById(R.id.tv_uuid);
         Button button = dialog.findViewById(R.id.button);
         button.setOnClickListener(v -> dialog.dismiss());
 
@@ -162,9 +163,9 @@ public class MapFragment extends BaseFragment implements OnMapReadyCallback {
             }
         }
         tvMetadata.setText(sb.toString());
-
+        tvUuid.setText(data.getUuid());
         if (data.getCreatedAt() != null) {
-            submitted.setText(sdf.format(data.getCreatedAt()));
+            tvSubmitted.setText(sdf.format(data.getCreatedAt()));
         }
 
         dialog.show();

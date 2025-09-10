@@ -24,6 +24,7 @@ public class Data implements Serializable {
     private List<Image> images;
     private Map<Long, List<QuestionParameter>> survey;
     private List<SurveyResponse> surveyResponses;
+    private String details;
 
     private Project project;
 
@@ -131,6 +132,14 @@ public class Data implements Serializable {
 
     public void setProject(Project project) {
         this.project = project;
+    }
+
+    public String getDetails() {
+        return details;
+    }
+
+    public void setDetails(String details) {
+        this.details = details;
     }
 
     @Override

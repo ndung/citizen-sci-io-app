@@ -136,10 +136,13 @@
     <string name="username_cant_be_empty">username_cannot_be_empty</string>
     <string name="metadata">Metadata</string>
     <string name="project_name">Project</string>
-    <string name="uploaded_record">My uploaded data</string>
+    <string name="uploaded_record">My submitted data</string>
     <string name="verified_data">My verified data</string>
     <string name="all_data">All data</string>
     <string name="view_online_data">View online data</string>
-    <string name="data_for_project">"View data for project "</string>
+    <string name="data_for_project">"View uploaded data for project "</string>
     <string name="contribute_data_for_project">"Contribute data for project "</string>
+    <string name="data_for_user">View uploaded data</string>
+    <string name="uuid">Uuid</string>
+    <string name="device_id">Device id</string>
 </resources>

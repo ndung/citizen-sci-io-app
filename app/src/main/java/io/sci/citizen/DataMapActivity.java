@@ -45,7 +45,6 @@ import io.sci.citizen.client.RecordService;
 import io.sci.citizen.client.Response;
 import io.sci.citizen.model.Data;
 import io.sci.citizen.model.Image;
-import io.sci.citizen.model.SurveyResponse;
 import io.sci.citizen.util.GsonDeserializer;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -62,14 +61,16 @@ public class DataMapActivity extends BaseActivity implements OnMapReadyCallback 
     private SliderImageAdapter adapter;
     private final SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy HH:mm", Locale.getDefault());
 
+    protected TextView tv;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layout_map);
 
         recordService = ApiUtils.RecordService(this);
-        TextView tv = findViewById(R.id.tv_title);
-        tv.setText(getString(R.string.data_for_project)+App.instance().memory().project().getName());
+        tv = findViewById(R.id.tv_title);
+        tv.setText(getString(R.string.data_for_user));
         mapView = findViewById(R.id.mapView);
         appCompatSpinner = findViewById(R.id.sp_data);
 
@@ -134,21 +135,13 @@ public class DataMapActivity extends BaseActivity implements OnMapReadyCallback 
         }
         TextView project = dialog.findViewById(R.id.tv_project);
         TextView notes = dialog.findViewById(R.id.tv_metadata);
-        TextView submitted = dialog.findViewById(R.id.uploaded);
+        TextView submitted = dialog.findViewById(R.id.tv_uploaded);
+        TextView uuid = dialog.findViewById(R.id.tv_uuid);
         Button button = dialog.findViewById(R.id.button);
         button.setOnClickListener(v -> dialog.dismiss());
-
-        StringBuilder sb = new StringBuilder();
-        if (data.getSurveyResponses() != null) {
-            for (SurveyResponse s : data.getSurveyResponses()){
-                sb.append(s.getQuestion().getAttribute())
-                        .append(":")
-                        .append(s.getResponse())
-                        .append(";");
-            }
-        }
         project.setText(data.getProject().getName());
-        notes.setText(sb.toString());
+        uuid.setText(data.getUuid());
+        notes.setText(data.getDetails());
         if (data.getCreatedAt() != null) {
             submitted.setText(sdf.format(data.getCreatedAt()));
         }
