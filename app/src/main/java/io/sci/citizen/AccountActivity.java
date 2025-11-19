@@ -58,13 +58,17 @@ public class AccountActivity extends BaseActivity {
         tvVersion.setText(BuildConfig.VERSION_NAME);
         //Picasso.with(getActivity()).load(auth.getCurrentUser().getPhotoUrl()).into(imageView);
 
-        recordService = ApiUtils.RecordService(this);
+        recordService = createRecordService();
         changeProfile.setOnClickListener(v -> startActivity(new Intent(this, ChangeProfileActivity.class)));
         changePassword.setOnClickListener(v -> startActivity(new Intent(this, ChangePasswordActivity.class)));
 
         submitted.setOnClickListener(v -> startDataMapActivity());
         refresh();
 
+    }
+
+    RecordService createRecordService() {
+        return ApiUtils.RecordService(this);
     }
 
     private void startDataMapActivity(){
