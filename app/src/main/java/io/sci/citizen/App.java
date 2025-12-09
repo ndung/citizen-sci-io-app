@@ -27,7 +27,7 @@ public class App extends Application implements LocationAssistant.Listener {
     public static final String LATITUDE = "LATITUDE";
     public static final String LONGITUDE = "LONGITUDE";
     public static final String SPEED = "SPEED";
-    public static final String ACCURACY = "ACCURACY";
+    public static final String ACCURACY = "ACC";
     public static final String LOCATION_NOTIFICATION = "LOCATION_NOTIFICATION";
     public static final String UPLOAD_NOTIFICATION = "UPLOAD_NOTIFICATION";
 
