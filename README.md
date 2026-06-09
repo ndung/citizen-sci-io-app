@@ -1,5 +1,5 @@
 # citizen-sci-io-app
-The *citizen-sci-io-app* repository hosts an Android application designed for citizen science participation. Volunteers can sign in, browse available projects, and contribute observations (photos, metadat, and geotagged data) through a step‑by‑step interface. Key features include:
+The *citizen-sci-io-app* repository hosts an “Citisci” Android application designed for citizen science participation. Volunteers can sign in, browse available projects, and contribute observations (photos, metadat, and geotagged data) through a step‑by‑step interface. Key features include:
 - Project browsing & user accounts – Users authenticate, select a project, and manage their profile settings.
 - Structured data collection – A stepper-based workflow supports image capture, metadata records, and location checks.
 - Background uploads – A foreground service uploads collected data (with metadata and images) to a remote API.
