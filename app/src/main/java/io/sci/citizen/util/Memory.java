@@ -170,8 +170,12 @@ public class Memory {
 
     public void deleteData(String id){
         Map<Long,LinkedHashMap<String,Data>> allData = allData();
-        LinkedHashMap<String, Data> map = getDataMap();
+        LinkedHashMap<String, Data> map = allData.get(project().getId());
+        if (map == null) {
+            map = new LinkedHashMap<>();
+        }
         map.remove(id);
+        allData.put(project().getId(), map);
         Gson gson = new GsonBuilder().setDateFormat("yyyy-MM-dd HH:mm:ss").enableComplexMapKeySerialization().create();
         String json = gson.toJson(allData);
         editor.putString(DATA_MAP, json);

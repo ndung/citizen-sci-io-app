@@ -6,6 +6,9 @@ android {
         buildConfig=true
     }
     namespace="io.sci.citizen"
+    testOptions {
+        unitTests.includeAndroidResources = true
+    }
     defaultConfig {
         applicationId "io.sci.citizen"
         minSdkVersion 23
