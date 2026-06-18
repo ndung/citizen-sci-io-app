@@ -1,5 +1,5 @@
 # citizen-sci-io-app
-The *citizen-sci-io-app* repository hosts an “Citisci” Android application designed for citizen science participation. Volunteers can sign in, browse available projects, and contribute observations (photos, metadat, and geotagged data) through a step‑by‑step interface. Key features include:
+The *citizen-sci-io-app* repository hosts an “Citisci” Android application designed for citizen science participation. Volunteers can sign in, browse available projects, and contribute observations (photos, metadata, and geotagged data) through a step‑by‑step interface. Key features include:
 - Project browsing & user accounts – Users authenticate, select a project, and manage their profile settings.
 - Structured data collection – A stepper-based workflow supports image capture, metadata records, and location checks.
 - Background uploads – A foreground service uploads collected data (with metadata and images) to a remote API.
@@ -7,7 +7,8 @@ The *citizen-sci-io-app* repository hosts an “Citisci” Android application d
 - Networking stack – Uses Retrofit with token-based authentication, cookies, and JSON serialization.
 - Built with Java, AndroidX components, and Gradle, the app targets SDK 35+ (compile SDK 36) and leverages libraries like Glide, Google Play Services, and the Material stepper framework.
 
-URL backend: https://citizen-sci-io-c296af702ec9.herokuapp.com
+Installable apk: https://appho.st/d/PYpugcQa
+Backend app URL: https://citizen-sci-io-c296af702ec9.herokuapp.com
 
 ## Login for admin
 - username: admin
